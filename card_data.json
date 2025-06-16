@@ -21,10 +21,12 @@
     },
    
     {
+        "id": 5,
           "title": "Wedding Invite (Image)",
           "image_url": "/static/cards/wed.jpg"
     },
     {
+        "id": 6,
           "title": "Birthday Invite (Video)",
           "image_url": "/static/cards/birthday.mp4"
     }
