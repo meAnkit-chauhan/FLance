@@ -6,7 +6,7 @@
     },
     {
         "id": 2,
-        "title": "Sample Card 2",
+        "title": "Sample Card ",
         "image_url": "/static/cards/q.jpg"
     },
     {
@@ -20,14 +20,14 @@
         "image_url": "/static/cards/wed.jpg"
     },
    
-        {
+    {
           "title": "Wedding Invite (Image)",
           "image_url": "/static/cards/wed.jpg"
-        },
-        {
+    },
+    {
           "title": "Birthday Invite (Video)",
           "image_url": "/static/cards/birthday.mp4"
-        }
+    }
      
       
 ]
