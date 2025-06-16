@@ -18,6 +18,16 @@
         "id": 4,
         "title": "Sample Card 4",
         "image_url": "/static/cards/wed.jpg"
-    }
-
+    },
+   
+        {
+          "title": "Wedding Invite (Image)",
+          "image_url": "/static/cards/wed.jpg"
+        },
+        {
+          "title": "Birthday Invite (Video)",
+          "image_url": "/static/cards/birthday.mp4"
+        }
+     
+      
 ]

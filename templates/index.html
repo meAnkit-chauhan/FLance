@@ -56,15 +56,15 @@
             {% endfor %}
         </section>
 
-       <!-- Dynamic Invitation Cards Section -->
-<section class="mt-16">
+        <!-- Dynamic Invitation Cards Section -->
+<section class="mt-16 px-4">
     <h2 class="text-2xl font-semibold text-gray-700 text-center mb-8">Custom Invitation Cards Collection</h2>
-    <div class="overflow-x-auto whitespace-nowrap space-x-4 flex">
+    <div class="overflow-x-auto whitespace-nowrap flex space-x-4 pb-4">
         {% for card in cards %}
-        <div class="inline-block bg-white rounded-2xl shadow-md p-4 w-64">
+        <div class="inline-block bg-white rounded-2xl shadow-md p-4 w-64 flex-shrink-0">
             {% if card.image_url.endswith('.mp4') or card.image_url.endswith('.webm') %}
                 <!-- Video Card -->
-                <video controls class="rounded-xl w-full mb-4">
+                <video class="rounded-xl w-full mb-4" autoplay muted loop playsinline>
                     <source src="{{ card.image_url }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -78,6 +78,8 @@
     </div>
 </section>
 
+
+       
             
        
     </main>
