@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Sample Card 1",
+        "image_url": "/static/cards/p.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Sample Card 2",
+        "image_url": "/static/cards/q.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Sample Card 3",
+        "image_url": "/static/cards/r.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Sample Card 4",
+        "image_url": "/static/cards/wed.jpg"
+    }
+
+]

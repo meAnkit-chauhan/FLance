@@ -1,0 +1,120 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-lance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aeXNzSRo5Z+hOgGvZPqQbpl7QxehG9vZquPfX+jwbhvKckim+K6vQOX4D3KUu1XWzO2vRt0O3egU02v79FQj5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="text-gray-800" style="background-image: url('/static/images/cultural.jpg'); background-size: cover; background-attachment: fixed;">
+    <div class="bg-white/80 min-h-screen backdrop-blur-sm">
+
+    <header class="bg-white shadow-md p-6">
+        <h1 class="text-3xl font-bold text-center text-blue-700">F-lance--"freelance services"</h1>
+        <p class="text-center text-gray-500 mt-2">We Design. We Develop. We Deliver.</p>
+    </header>
+
+    <main class="p-8 max-w-7xl mx-auto">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="max-w-xl mx-auto mb-6">
+      {% for category, message in messages %}
+      <div class="p-4 rounded-xl text-sm font-medium 
+                  {% if category == 'success' %}
+                      bg-green-100 text-green-700
+                  {% elif category == 'error' %}
+                      bg-red-100 text-red-700
+                  {% else %}
+                      bg-gray-100 text-gray-700
+                  {% endif %}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+        <section class="text-center mb-12">
+            <h2 class="text-2xl font-semibold text-gray-700">Our Services</h2>
+            <p class="mt-3 text-gray-500">Explore the wide range of digital solutions we offer.</p>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for category, services in services.items() %}
+            <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-all">
+                <h3 class="text-xl font-bold text-blue-600 mb-4">{{ category }}</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    {% for service in services %}
+                    <li>{{ service }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+
+       <!-- Dynamic Invitation Cards Section -->
+<section class="mt-16">
+    <h2 class="text-2xl font-semibold text-gray-700 text-center mb-8">Custom Invitation Cards Collection</h2>
+    <div class="overflow-x-auto whitespace-nowrap space-x-4 flex">
+        {% for card in cards %}
+        <div class="inline-block bg-white rounded-2xl shadow-md p-4 w-64">
+            {% if card.image_url.endswith('.mp4') or card.image_url.endswith('.webm') %}
+                <!-- Video Card -->
+                <video controls class="rounded-xl w-full mb-4">
+                    <source src="{{ card.image_url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% else %}
+                <!-- Image Card -->
+                <img src="{{ card.image_url }}" alt="{{ card.title }}" class="rounded-xl w-full mb-4">
+            {% endif %}
+            <h3 class="font-bold text-lg text-center">{{ card.title }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+            
+       
+    </main>
+
+    <footer class="text-center py-6 text-sm text-gray-500 border-t mt-12">
+        <!-- Contact Section -->
+<section class="mt-16 px-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold text-gray-700 text-center mb-6">Get in Touch</h2>
+    <div class="bg-white rounded-2xl shadow-md p-6 space-y-4 text-center">
+        <p class="text-gray-600">Feel free to reach out to us for custom services, queries or collaborations.</p>
+
+        <div class="text-gray-800 space-y-2 text-lg">
+            <p>
+                <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                <a href="mailto:teamf.lance@example.com" class="text-blue-600 hover:underline">teamf.lance@example.com</a>
+            </p>
+            <p>
+                <i class="fab fa-whatsapp text-green-600 mr-2"></i>
+                <a href="https://wa.me/919876543210" target="_blank" class="hover:underline text-green-700">+91 98765 43210</a> |
+                <a href="https://wa.me/918765432109" target="_blank" class="hover:underline text-green-700">+91 87654 32109</a>
+            </p>
+            <p>
+                <i class="fab fa-instagram text-pink-500 mr-2"></i>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="text-pink-600 hover:underline">@yourprofile</a>
+            </p>
+            <p>
+                <i class="fab fa-facebook text-blue-700 mr-2"></i>
+                <a href="https://facebook.com/yourpage" target="_blank" class="text-blue-700 hover:underline">Facebook Page</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+        
+        
+        &copy; 2025 F-lance. All rights reserved.
+    </footer>
+</body>
+</html>
